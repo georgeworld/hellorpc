@@ -1,0 +1,49 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.github.hellorpc'
+version = '1.0.0'
+
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+// NetBeans will automatically add "run" and "debug" tasks relying on the
+// "mainClass" property. You may however define the property prior executing
+// tasks by passing a "-PmainClass=<QUALIFIED_CLASS_NAME>" argument.
+//
+// Note however, that you may define your own "run" and "debug" task if you
+// prefer. In this case NetBeans will not add these tasks but you may rely on
+// your own implementation.
+if (!hasProperty('mainClass')) {
+    ext.mainClass = 'com.github.hellorpc.MainServer'
+}
+
+repositories {
+    flatDir {
+        dirs 'lib'
+    }
+    
+    mavenLocal()
+    maven {url 'http://maven.oschina.net/content/groups/public/'}
+    mavenCentral()
+}
+
+configurations {
+    compile.exclude module: 'logback-classic'
+    compile.exclude module: 'slf4j-nop'
+}
+
+dependencies {
+    compile fileTree(dir: "$buildDir/../lib", includes: ['*.jar'])
+    compile 'commons-io:commons-io:2.3'
+    compile 'commons-codec:commons-codec:1.10'
+    compile 'org.slf4j:slf4j-api:1.7.13'
+    //temp import
+    testCompile group: 'junit', name: 'junit', version: '4.10'
+}

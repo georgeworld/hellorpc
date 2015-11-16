@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Author : George <GeorgeNiceWorld@gmail.com> | <Georgeinfo@163.com>
+Copyright (C) George (http://www.georgeinfo.com), All Rights Reserved.
+-->
+<configuration debug="false">
+    <contextName>Logback Config</contextName>
+
+    <property name="LOG_HOME" value="log" />
+
+    <!-- 控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoder默认配置为PartternLayoutEncoder    -->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_HOME}/myLog.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender -->
+
+    <!-- 按照每天生成日志文件 -->
+    <appender name="ROLLINGFILE"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--日志文件输出的文件名-->
+            <FileNamePattern>${LOG_HOME}/log_%d{yyyy-MM-dd}.log</FileNamePattern>
+            <!--日志文件保留月数-->
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+        <!-- 日志文件最大的大小，如果超过了这个大小，但是还没有到换天的时候，则今天的日志文件会被清零重新写入 -->
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>10MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+
+    <logger name="test.logtest" level="DEBUG" additivity="false" /> 
+    <!-- logger name="com.piedra.logback" level="WARN">
+        <appender-ref ref="FILE"/>
+    </logger -->
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="ROLLINGFILE" />
+    </root>
+</configuration>
