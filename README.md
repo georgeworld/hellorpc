@@ -28,7 +28,7 @@
 
 # 测试代码
 ## 服务端的测试代码如下：
-@Test
+>@Test
 >    public void serverStartup() throws IOException {
 >        Registry.RegistryHolder.getInstance().regist(new ActionImpl(), ActionApi.class);
 >        ServerSocket ss = new ServerSocket(6000);
