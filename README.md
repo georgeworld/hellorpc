@@ -1,4 +1,5 @@
 # Hello RPC. 你好，远程过程调用框架
+![image](https://raw.githubusercontent.com/georgeworld/georgeworld.github.com/master/ginkgo/hellorpc/img/hellorpc-logo.png)<br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; Hello RPC框架，是[老乔](http://www.georgeinfo.com)在2015年启动的一个小玩具框架，主要目的是学习和锻炼底层数据的处理逻辑。<br>
 &nbsp;&nbsp;&nbsp;&nbsp; 你没看错，它的名字就叫做**“Hello RPC”**，因为是个试验性质的小框架，所以名字起得也很随便。<br>
@@ -28,16 +29,18 @@
 
 # 测试代码
 ## 服务端的测试代码如下：
->@Test
->    public void serverStartup() throws IOException {
->        Registry.RegistryHolder.getInstance().regist(new ActionImpl(), ActionApi.class);
->        ServerSocket ss = new ServerSocket(6000);
->        System.out.println("------------- server started------------------");
->        while (true) {
->            Socket s = ss.accept();
->            new VirtualServer(s).start();
->        }
->    }
+<pre><code>
+    @Test
+    public void serverStartup() throws IOException {
+        Registry.RegistryHolder.getInstance().regist(new ActionImpl(), ActionApi.class);
+        ServerSocket ss = new ServerSocket(6000);
+        System.out.println("------------- server started------------------");
+        while (true) {
+            Socket s = ss.accept();
+            new VirtualServer(s).start();
+        }
+    }
+</pre></code>
 
 ## 客户端的测试代码如下：
 > @Test
