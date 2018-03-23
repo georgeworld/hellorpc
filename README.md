@@ -11,7 +11,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp; **总之**，这是一个学习和做实验用的RPC小框架，大家可以用来学习数据的底层处理，用来学习报文结构的设计，就不要在实际的生产环境中使用了，毕竟它只是一个小玩具，还很不成熟。
 
 # 设计
-## 设计文档，在[这里]((https://raw.githubusercontent.com/georgeworld/georgeworld.github.com/master/ginkgo/hellorpc/doc/HelloRPC-doc.pdf) 。
+## 设计文档，在[这里](https://raw.githubusercontent.com/georgeworld/georgeworld.github.com/master/ginkgo/hellorpc/doc/HelloRPC-doc.pdf) 。
 
 ## 报文结构设计如下：
 ![image](https://raw.githubusercontent.com/georgeworld/georgeworld.github.com/master/ginkgo/hellorpc/img/doc-1.png)<br>  
@@ -23,7 +23,7 @@
 ![image](https://raw.githubusercontent.com/georgeworld/georgeworld.github.com/master/ginkgo/hellorpc/img/doc-3.png)<br>
 
 ## 测试运行的代码文件如下：
-![image](https://raw.githubusercontent.com/georgeworld/georgeworld.github.com/master/ginkgo/hellorpc/img/doc-3.png)<br>
+![image](https://raw.githubusercontent.com/georgeworld/georgeworld.github.com/master/ginkgo/hellorpc/img/doc-4.png)<br>
 
 
 # 测试代码
