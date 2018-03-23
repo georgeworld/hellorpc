@@ -43,50 +43,52 @@
 </pre></code>
 
 ## 客户端的测试代码如下：
-> @Test
->    public void hello() throws UnsupportedEncodingException {
->        //PHP服务器端口
->        int serverPort_PHP = 8081;
->        //Java服务器端口
->        int serverPort_Java = 6000;
+<pre><code>
+ @Test
+    public void hello() throws UnsupportedEncodingException {
+        //PHP服务器端口
+        int serverPort_PHP = 8081;
+        //Java服务器端口
+        int serverPort_Java = 6000;
 
->        //这个是连接Hello RPC PHP Server
->        //HelloRPC rpc = new HelloRPC("127.0.0.1", serverPort_PHP, "php/indexServer.php", false);
+        //这个是连接Hello RPC PHP Server
+        //HelloRPC rpc = new HelloRPC("127.0.0.1", serverPort_PHP, "php/indexServer.php", false);
 
->        //这个是连接Hello RPC Java Server
->        HelloRPC rpc = new HelloRPC("127.0.0.1", serverPort_Java, null, true);
+        //这个是连接Hello RPC Java Server
+        HelloRPC rpc = new HelloRPC("127.0.0.1", serverPort_Java, null, true);
 
->        //声明动作接口
->        ActionApi client = rpc.getClient(ActionApi.class);
+        //声明动作接口
+        ActionApi client = rpc.getClient(ActionApi.class);
 
->        //声明要传输的数据实体对象
->        TestBean subBean = new TestBean();
->        subBean.setName("hello");
->        TestBean testBean = new TestBean();
->        testBean.setName("gl");
->        testBean.setNames(subBean);
+        //声明要传输的数据实体对象
+        TestBean subBean = new TestBean();
+        subBean.setName("hello");
+        TestBean testBean = new TestBean();
+        testBean.setName("gl");
+        testBean.setNames(subBean);
 
->        //测试传输Map
->        Map dataMap = new LinkedHashMap();
->        dataMap.put("key", testBean);//将数据实体对象放入map中传输
->        MapContainer<String, TestBean> mc = new MapContainer<String, TestBean>(dataMap);
+        //测试传输Map
+        Map dataMap = new LinkedHashMap();
+        dataMap.put("key", testBean);//将数据实体对象放入map中传输
+        MapContainer<String, TestBean> mc = new MapContainer<String, TestBean>(dataMap);
 
->        //将各种结构的数据，传入action接口方法，执行
->        Map result = client.calc(dataMap);
->        System.out.println("Map以及对象传输，执行结果 result:" + result);
+        //将各种结构的数据，传入action接口方法，执行
+        Map result = client.calc(dataMap);
+        System.out.println("Map以及对象传输，执行结果 result:" + result);
 
->        //测试传输list
->        List<String> list = new ArrayList<>();
->        list.add("George");
->        List<String> resultOfList = client.calc(list);
->        System.out.println("List传输结果：result of list:" + resultOfList);
+        //测试传输list
+        List<String> list = new ArrayList<>();
+        list.add("George");
+        List<String> resultOfList = client.calc(list);
+        System.out.println("List传输结果：result of list:" + resultOfList);
 
->        //测试传输字符串
->        //TODO: 传输汉字等多字节字符的字符串工作，还需要完善
->        String strContent = new String("How are you你好吗？".getBytes("UTF-8"), "UTF-8");
->        String result_of_string = client.calc(strContent);
->        System.out.println("测试传输字符串：result_of_string:" + result_of_string);
->   }
+        //测试传输字符串
+        //TODO: 传输汉字等多字节字符的字符串工作，还需要完善
+        String strContent = new String("How are you你好吗？".getBytes("UTF-8"), "UTF-8");
+        String result_of_string = client.calc(strContent);
+        System.out.println("测试传输字符串：result_of_string:" + result_of_string);
+    }
+</pre></code>
 
 # 参与及讨论
   &nbsp;&nbsp;&nbsp;&nbsp;欢迎加入《互联网软件之家》QQ群：[693203950](//shang.qq.com/wpa/qunwpa?idkey=61c4589ea5618ae46d063f94cbd9394de290dd39ef46fca059a4309b8c1d7874)<br>  
