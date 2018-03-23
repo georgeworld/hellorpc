@@ -2,7 +2,7 @@
 ![image](https://raw.githubusercontent.com/georgeworld/georgeworld.github.com/master/ginkgo/hellorpc/img/hellorpc-logo.png)<br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; Hello RPC框架，是[老乔](http://www.georgeinfo.com)在2015年启动的一个小玩具框架，主要目的是学习和锻炼底层数据的处理逻辑。<br>
-&nbsp;&nbsp;&nbsp;&nbsp; 你没看错，它的名字就叫做**“Hello RPC”**，因为是个试验性质的小框架，所以名字起得也很随便。<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 你没看错，它的名字就叫做**Hello RPC**，因为是个试验性质的小框架，所以名字起得也很随便。<br>
 &nbsp;&nbsp;&nbsp;&nbsp; 这是一个“远程过程调用”框架，也就是分为“客户端-->数据和接口定义中间层-->服务端”这样典型的结构，类似Java RMI、FaceBook Thrift和gRPC等，当然，无论性能还是扩展性，都比不上人家那些主流的大框架。<br>
 &nbsp;&nbsp;&nbsp;&nbsp; Hello RPC是[老乔](http://www.georgeinfo.com)发起，设计了通讯协议，传输规则、执行逻辑，定义了报文格式，并开发了报文解析相关的二进制处理类，然后朋友WANGRR参与开发了很多具体的实现，然后我又利用空余的时间开发了一些应用，最终完成了一个基础小定稿版本。<br>
 
