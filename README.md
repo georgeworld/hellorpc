@@ -11,6 +11,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp; 这是一个基本功能小定稿的Java版本 RPC项目，它有对应的PHP版本的实现，不过代码还没经过详细的测试，所以还没有开源出来，稍后如果有空闲的时间，跨语言的工作会进行下去，会PHP的实现也开源出来。<br>
 &nbsp;&nbsp;&nbsp;&nbsp; **总之**，这是一个学习和做实验用的RPC小框架，大家可以用来学习数据的底层处理，用来学习报文结构的设计，就不要在实际的生产环境中使用了，毕竟它只是一个小玩具，还很不成熟。
 
+# 路线图
+https://raw.githubusercontent.com/georgeworld/georgeworld.github.com/master/gstudio/res/img/HelloRPC-road-map.png
+
 # 设计
 ## 设计文档，在[这里](https://raw.githubusercontent.com/georgeworld/georgeworld.github.com/master/ginkgo/hellorpc/doc/HelloRPC-doc.pdf) 。
 
