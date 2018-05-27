@@ -4,7 +4,7 @@
  */
 package test.client;
 
-import com.github.hellorpc.client.HelloRPC;
+import com.github.hellorpc.client.OldHelloRPC;
 import com.github.hellorpc.container.MapContainer;
 import middle.action.ActionApi;
 import middle.entities.TestBean;
@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Hello RPC 客户端测试入口类
+ * Hello Server 客户端测试入口类
  *
  * @author George <Georgeinfo@163.com>
  */
@@ -55,11 +55,11 @@ public class ClientTest {
         //Java服务器端口
         int serverPort_Java = 6000;
 
-        //这个是连接Hello RPC PHP Server
-        //HelloRPC rpc = new HelloRPC("127.0.0.1", serverPort_PHP, "php/indexServer.php", false);
+        //这个是连接Hello Server PHP Server
+        //OldHelloRPC rpcServer = new OldHelloRPC("127.0.0.1", serverPort_PHP, "php/indexServer.php", false);
 
-        //这个是连接Hello RPC Java Server
-        HelloRPC rpc = new HelloRPC("127.0.0.1", serverPort_Java, null, true);
+        //这个是连接Hello Server Java Server
+        OldHelloRPC rpc = new OldHelloRPC("127.0.0.1", serverPort_Java, null, true);
 
         //声明动作接口
         ActionApi client = rpc.getClient(ActionApi.class);

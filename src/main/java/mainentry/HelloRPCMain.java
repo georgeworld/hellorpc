@@ -47,7 +47,7 @@ public class HelloRPCMain {
     public static void main(String[] args) {
         JFrame mainFrame = new JFrame();
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainFrame.setTitle("Hello RPC Framework");
+        mainFrame.setTitle("Hello Server Framework");
         mainFrame.setSize(599, 300);
         mainFrame.setLayout(new java.awt.BorderLayout());
 

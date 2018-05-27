@@ -30,7 +30,7 @@ import java.util.Set;
 import java.util.Map.Entry;
 
 /**
- * HelloRPC 序列化
+ * OldHelloRPC 序列化
  *
  * @author dev1 在序列化的时候最下面一层的TLV的value的第一个字节是表示它是：数组、list、set、map、什么都不是。
  * 如果是Map则后两个字节第一个表示 key的类型，第二个字节表示value的类型

@@ -15,7 +15,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * Hello RPC 服务端测试入口类
+ * Hello Server 服务端测试入口类
  *
  * @author dev1
  */
