@@ -1,5 +1,6 @@
 package com.github.hellorpc.configuration;
 
+import com.georgeinfo.ginkgo.injection.context.ApplicationContext;
 import com.github.hellorpc.client.ClientInitializer;
 
 /**
@@ -8,5 +9,5 @@ import com.github.hellorpc.client.ClientInitializer;
  * @author George (GeorgeWorld@qq.com)
  */
 public interface ClientConfiguration {
-    public ClientInitializer getClientInitializer();
+    public ClientInitializer getClientInitializer(ApplicationContext context);
 }

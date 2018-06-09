@@ -22,6 +22,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+
+        <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>2.6</version>
@@ -55,6 +61,15 @@
 
         <!-- 添加本地依赖 开始 -->
         <dependency>
+            <groupId>com.georgeinfo.ginkgo.basic</groupId>
+            <artifactId>toolkit</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <!--本地jar的路径,相对或者绝对都可以-->
+            <systemPath>${project.basedir}\lib\toolkit-1.1.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
             <groupId>com.georgeinfo.ginkgo.di</groupId>
             <artifactId>ginkgo-di</artifactId>
             <version>1.1-SNAPSHOT</version>
@@ -83,10 +98,16 @@
         <!-- 添加本地依赖 结束 -->
 
         <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.9</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.25</version>
-            <scope>test</scope>
+            <!-- scope>test</scope -->
         </dependency>
 
         <dependency>

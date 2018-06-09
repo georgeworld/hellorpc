@@ -3,10 +3,8 @@ package com.github.hellorpc.initializer;
 import com.georgeinfo.ginkgo.injection.context.ApplicationContext;
 import com.github.hellorpc.client.ClientInitializer;
 import com.github.hellorpc.configuration.ClientConfiguration;
-import com.github.hellorpc.configuration.ServerRPConfiguration;
 import com.github.hellorpc.container.Ioc;
 import com.github.hellorpc.def.HelloConstants;
-import com.github.hellorpc.nio.client.ClientInitializerNettyImpl;
 
 /**
  * 客户端初始化入口
@@ -34,8 +32,8 @@ public class Client {
         ClientConfiguration config = Ioc.getBeanById(HelloConstants.CLIENT_CONFIG_OBJECT_KEY);
 
         //执行客户端初始化
-        ClientInitializer client = config.getClientInitializer();
-        client.doInit(context);
+        ClientInitializer client = config.getClientInitializer(context);
+        client.doInit();
         return hello;
     }
 }

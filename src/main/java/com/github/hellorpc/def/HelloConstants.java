@@ -19,4 +19,8 @@ public class HelloConstants {
      * 客户端连接池对象，在DI容器中的key
      */
     public static final String CLIENT_POOL_KEY = "_RPClientPool";
+    /**
+     * 客户端连接池对象的Channel ID，与其对应的InetSocketAddress的映射关系map，在DI容器中的key
+     */
+    public static final String CHANNEL_ID_ADDRESS_KEY = "_RPClientPool_ChannelIDAddress";
 }

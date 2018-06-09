@@ -1,8 +1,9 @@
 package com.github.hellorpc.configuration;
 
+import com.georgeinfo.ginkgo.injection.context.ApplicationContext;
 import com.github.hellorpc.annotation.ClientRootConfiguration;
 import com.github.hellorpc.client.ClientInitializer;
-import com.github.hellorpc.nio.client.ClientInitializerNettyImpl;
+import com.github.hellorpc.nio.client.impl.ClientInitializerNettyImpl;
 
 /**
  * @author George (GeorgeWorld@qq.com)
@@ -10,7 +11,7 @@ import com.github.hellorpc.nio.client.ClientInitializerNettyImpl;
 @ClientRootConfiguration
 public class ClientConfigurationDefaultImpl implements ClientConfiguration {
     @Override
-    public ClientInitializer getClientInitializer() {
-        return new ClientInitializerNettyImpl();
+    public ClientInitializer getClientInitializer(ApplicationContext context) {
+        return new ClientInitializerNettyImpl(context);
     }
 }

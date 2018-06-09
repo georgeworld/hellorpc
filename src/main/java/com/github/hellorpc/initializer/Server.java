@@ -3,7 +3,11 @@ package com.github.hellorpc.initializer;
 import com.github.hellorpc.configuration.ServerRPConfiguration;
 import com.github.hellorpc.container.Ioc;
 import com.github.hellorpc.def.HelloConstants;
+import com.github.hellorpc.logger.GeorgeLogger;
+import com.github.hellorpc.logger.GeorgeLoggerFactory;
 import com.github.hellorpc.nio.server.NettyServer;
+
+import java.io.IOException;
 
 /**
  * Hello Server 启动器
@@ -11,6 +15,7 @@ import com.github.hellorpc.nio.server.NettyServer;
  * @author George (GeorgeWorld@qq.com)
  */
 public class Server {
+    private static final GeorgeLogger LOG = GeorgeLoggerFactory.getLogger(Server.class);
     private Hello hello;
 
     public Server(Hello hello) {
@@ -19,6 +24,27 @@ public class Server {
 
     public Hello getHello() {
         return hello;
+    }
+
+    private static void waitToQuit(NettyServer server) throws IOException {
+        LOG.info("Server is running on port {}, press q to quit." + server.getPort());
+        boolean input = true;
+        while (input) {
+            int b = System.in.read();
+            switch (b) {
+                case 'q':
+                    LOG.info("Server关闭...");
+                    server.close();
+                    input = false;
+                    break;
+                case '\r':
+                case '\n':
+                    break;
+                default:
+                    LOG.info("q -- quit.");
+                    break;
+            }
+        }
     }
 
     /**
@@ -32,6 +58,13 @@ public class Server {
         //启动Netty 服务端监听线程池
         NettyServer nettyServer = new NettyServer(port);
         nettyServer.run();
+
+        try {
+            waitToQuit(nettyServer);
+        } catch (IOException e) {
+            LOG.error(e);
+            //e.printStackTrace();
+        }
 
         return hello;
     }
