@@ -1,6 +1,6 @@
 # Hello RPC. 你好，远程过程调用框架
 ![image](https://raw.githubusercontent.com/georgeworld/georgeworld.github.com/master/ginkgo/hellorpc/img/hellorpc-logo.png)<br>
-
+## 这个版本的RPC，使用的报文协议，是类似ISO8583的报文协议
 &nbsp;&nbsp;&nbsp;&nbsp; Hello RPC框架，是[老乔](http://www.georgeinfo.com)在2015年启动的一个小玩具框架，主要目的是学习和锻炼底层数据的处理逻辑。<br>
 &nbsp;&nbsp;&nbsp;&nbsp; 你没看错，它的名字就叫做**Hello RPC**，因为是个试验性质的小框架，所以名字起得也很随便。<br>
 &nbsp;&nbsp;&nbsp;&nbsp; 这是一个“远程过程调用”框架，也就是分为“客户端-->数据和接口定义中间层-->服务端”这样典型的结构，类似Java RMI、FaceBook Thrift和gRPC等，当然，无论性能还是扩展性，都比不上人家那些主流的大框架。<br>
